@@ -1,0 +1,89 @@
+0,2,1,Do you want to take up a sport?
+1,-1,-1,You should not take up any sport
+2,3,4,Do you have any injuries that prevents you from doing certain activities?
+3,4,1,Go and see a doctor. Does the doctor say you can take up a sport?
+4,6,5,Do you enjoy training to improve your skill level?
+5,6,1,Are you prepared to change your mindset on this?
+6,7,38,Do you like working on a team?
+7,8,38,Are you prepared to trust other people?
+8,9,38,Are you good at communicating with others?
+9,10,88,Do you prefer hot weather over cold weather?
+10,11,11,I would recommend taking up a Team Summer Sport
+11,12,18,Do you have good hand eye coordination?
+12,13,19,Do you have good eye sight?
+13,14,20,Do you have good upper body strength?
+14,15,22,Are you good at hitting a ball with a bat?
+15,16,22,Are you a patient person?
+16,17,21,Would you consider yourself short?
+17,-1,-1,You should take up Cricket or Rounders
+18,-1,-1,You should take up a less physical sport such as Bowls
+19,13,18,Are you willing to wear contact lenses?
+20,14,18,Are you willing to work on it?
+21,17,22,Do you prefer activities that take a longer time over activities that take a shorter time?
+22,-1,-1,You should take up Basketball
+23,24,28,Do you have good eye sight?
+24,25,30,Are you good at kicking a ball?
+25,26,27,Would you say you have good endurance/stamina?
+26,-1,-1,You should take up Football
+27,-1,-1,Go to a gym to get fitter. You should take up Football
+28,29,24,Are you visually impaired?
+29,-1,-1,You should take up visually impaired Football
+30,31,26,Do you have good hand eye coordination?
+31,32,35,Do you have good upper body strength?
+32,33,36,Are you good at throwing a ball?
+33,34,37,Are you good at catching a ball?
+34,-1,-1,You should take up Rugby
+35,32,26,Are you willing to work on it?
+36,33,26,Are you willing to work on it?
+37,34,26,Are you willing to work on it?
+38,40,39,Are you able to stay on task?
+39,40,1,Are you prepared to change your mindset on this?
+40,41,51,Do you mind getting wet?
+41,42,67,Do you have plenty of spare cash?
+42,43,67,Do you like travelling in fast vehicles?
+43,44,44,I would recommend taking up Motor Sports
+44,45,50,Are you in excellent shape?
+45,46,49,Do you have excellent reaction times?
+46,47,48,Do you have a preference of four wheel vehicles over two wheel vehicles?
+47,-1,-1,You should take up Formula 1
+48,-1,-1,You should take up Motor Cross
+49,-1,-1,You should become a navigator for rally car racing
+50,46,49,Join a gym until you're fitter. Do you have excellent reaction times?
+51,52,52,I would recommend taking up Water Sports
+52,53,56,Do you have plenty of spare cash?
+53,56,54,Do you suffer from motion sickness?
+54,55,56,Do you like travelling in fast vehicles?
+55,-1,-1,You should take up Jet Ski or Speed Boat racing
+56,57,65,Are you a strong swimmer?
+57,58,64,Do you have good balance?
+58,59,66,Do you prefer activities that take a longer time over activities that take a shorter time?
+59,60,63,Are you patient?
+60,61,62,Are you good at balancing without having anything to hold on to?
+61,-1,-1,You should take up surfing
+62,-1,-1,You should take up Windsurfing
+63,-1,-1,You should take up Standup Paddle Boarding
+64,58,66,Can your balance be improved?
+65,57,66,Is your swimming competent enough?
+66,-1,-1,You should take up Swimming Lessons
+67,68,79,Do you prefer hot weather over cold weather?
+68,69,69,I would recommend taking up an Individual Summer Sport
+69,70,78,Do you have good eye sight?
+70,71,77,Do you have good hand eye coordination?
+71,72,76,Do you have good upper body strength?
+72,73,75,Do you prefer activities that take a longer time over activities that take a shorter time?
+73,74,75,Do you consider yourself patient?
+74,-1,-1,You should take up Golf
+75,-1,-1,You should take up Tennis
+76,72,77,Are you willing to work on it?
+77,-1,-1,You should take up Cycling
+78,-1,-1,You should take up Tandem Cycling as the Rear Rider
+79,80,80,I would recommend taking up an Individual Winter Sport
+80,81,87,Are you happy to travel to other countries?
+81,82,86,Do you have excellent balance?
+82,83,86,Do you like travelling at speed?
+83,84,85,Do you have any history of skateboarding?
+84,-1,-1,You should take up Snowboarding
+85,-1,-1,You should take up Down Hill Skiing
+86,-1,-1,You should take up Cross Country Skiing
+87,-1,-1,You should take up Ice Skating
+88,23,23,I would recommend taking up a Team Winter Sport

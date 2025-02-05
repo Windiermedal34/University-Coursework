@@ -1,0 +1,45 @@
+0,1,21,Go to see Mr X,Is Mr X in his office?
+1,2,31,Knock on the door,Does he look up?
+2,32,3,-,Affirmatively?
+3,4,31,-,Are you told to come back at 2.30?
+4,6,5,Go back to your desk,Is today Friday?
+5,6,7,-,Is it Lent?
+6,9,8,Find out cafeteria lunch menu,Was fish on?
+7,36,36,-,Is today Monday?
+8,10,36,-,Eggs?
+9,37,36,-,Did he swallow a bone?
+10,37,36,-,Were they off?
+11,17,12,-,Is there another competent department?
+12,13,30,-,Is it a question of increment?
+13,28,14,-,Have you recently been involved in a major success?
+14,28,30,-,Do you get on with the professor?
+15,29,29,-,Are you given reasons for hoping?
+16,38,11,-,Is it a T60 issue?
+17,18,39,-,Not interested in your case?
+18,19,39,-,Does it consider your question to be an intelligent one?
+19,20,39,-,Does it have time to deal with it?
+20,40,41,-,Has it really understood?
+21,22,44,Hang around,Is Miss Y in her office?
+22,23,44,-,Is she in a good mood?
+23,31,4,Have a chat with Miss Y,Can you see Mr X?
+24,42,25,-,Ask if one of his daughters has measles?
+25,35,26,-,Ask if both his daughters have measles?
+26,27,27,-,Ask if his three daughters have measles?
+27,34,31,-,And is the fourth OK?
+28,15,15,ASK FOR AN INCREMENT,Do you get an increment?
+29,31,31,WAIT SIX MONTHS,-
+30,31,31,Return to your desk - Ponder your next problem,-
+31,0,0,Think Hard - Firmly decide,-
+32,43,43,ENTER,-
+33,34,34,RELAX,-
+34,16,16,EXPLAIN THE PROBLEM,-
+35,31,31,Make rapid exit - EMERGENCY, Put Mr X in quarantine for 40 days
+36,31,31,Wait for 2.30,-
+37,31,31,WAIT UNTIL TOMORROW,-
+38,31,31,Go to the relevant office - Go from office to office,-
+39,4,4,DRINK COFFEE,-
+40,30,30,-,Does it offer congratulations?
+41,31,31,Send Mr X to TV1 - Leave him to absorb message,-
+42,35,33,-,Is his face spotty?
+43,33,24,-,Does he ask you to be seated?
+44,31,31,Take a walk around the lab,-
