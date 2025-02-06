@@ -1,0 +1,11 @@
+adam\project\bus\StartService.class
+adam\project\pers\GameFacade.class
+adam\project\resources\JakartaEE8Resource.class
+adam\project\converter\TimeConverter.class
+adam\project\ents\Foul.class
+adam\project\JakartaRestConfiguration.class
+adam\project\pers\AbstractFacade.class
+adam\project\ents\Game.class
+adam\project\ctrl\Start.class
+adam\project\pers\FoulFacade.class
+adam\project\ents\TimeData.class

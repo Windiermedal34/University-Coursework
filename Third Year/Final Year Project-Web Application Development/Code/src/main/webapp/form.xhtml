@@ -1,0 +1,165 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+        <h:form>
+            
+            <h:panelGrid columns="10" border="1" id="grid">
+                <f:facet name="header">
+                    <h:outputText value="Form"/>
+                </f:facet>
+                <p:outputLabel value="Quarter"/>
+                <p:outputLabel value="Time left"/>
+                <p:outputLabel value="Team"/>
+                <p:outputLabel value="Foul Code"/>
+                <p:outputLabel value="Foul Code Text"/>
+                <p:outputLabel value="Player Number"/>
+                <p:outputLabel value="Player Position"/>
+                <p:outputLabel value="Officials"/>
+                <p:outputLabel value="Decision"/>
+                <p:outputLabel value="Game"/>
+                
+                <p:inputText value="#{start.foul.quarter}" id="quarter" style="width: 100px" required="true" requiredMessage="Enter Quarter"/>
+                
+                
+                <p:inputText id="data2" value="#{start.foul.time}" style="width: 100px" required="true" requiredMessage="Enter Time">
+                    <f:converter converterId="adam.project.converter.TimeConverter"/>
+                </p:inputText>
+                
+                <p:selectOneButton id="team"  value="#{start.foul.homeOrAway}" style="width: 160px" required="true" requiredMessage="Select Team">
+                    <f:selectItem itemValue="Home" itemLabel="Home"/>
+                    <f:selectItem itemValue="Visitor" itemLabel="Visitor"/>
+                </p:selectOneButton>
+                
+                <p:selectOneMenu id="foulMenu" value="#{start.foul.foulName}" editable="true" filter="true" filterMatchMode="startsWith" style="width: 120px" required="true" requiredMessage="Select Foul">
+                    <f:selectItems value="#{start.fouls}" itemLabel="#{fouls.key}" itemValue="#{fouls.value}"/>
+                </p:selectOneMenu>
+                
+                <p:inputText value="#{start.filter}" style="width: 100px" id="foulText">
+                    <f:ajax event="keypress" execute="@this" render="foulText foulMenu" listener="#{start.updateComboBox}" delay="1000"/>
+                </p:inputText>
+                
+                <p:inputText id="player" value="#{start.foul.player}" style="width: 100px">
+                </p:inputText>
+                
+                <p:selectOneMenu id="position" value="#{start.foul.position}">
+                    <f:selectItems value="#{start.positions}" itemLabel="#{positions.key}" itemValue="#{positions.value}"/>
+                </p:selectOneMenu>
+                
+                <p:selectManyButton id="official" value="#{start.officials}" style="width: 440px">
+                    <f:selectItems value="#{start.officialList}" itemLabel="#{officialList.key}" itemValue="#{officialList.value}"/>
+                </p:selectManyButton>
+                
+                <p:selectOneButton id="decision" value="#{start.foul.decision}" style="width: 280px" required="true" requiredMessage="Select Decision">
+                    <f:selectItem itemValue="Accepted" itemLabel="Accepted"/>
+                    <f:selectItem itemValue="Declined" itemLabel="Declined"/>
+                    <f:selectItem itemValue="Offset" itemLabel="Offset"/>
+                </p:selectOneButton>
+                
+                <p:inputText id="game" value="#{start.gameID}" style="width: 100px" required="true" requiredMessage="Enter game Id"/>
+                
+                <f:facet name="footer">
+                    <h:commandButton value="Add Foul" action="#{start.addFoul}"/>
+                    <h:commandButton value="Finish" action="next"/>
+                </f:facet>
+            </h:panelGrid>
+            <br/>
+            <p:message for="quarter"/>
+            <p:message for="data2"/>
+            <p:message for="team"/>
+            <p:message for="foulMenu"/>
+            <p:message for="decision"/>
+            <p:message for="game"/>
+            <br/>
+            <h:dataTable value="#{start.foulsAdded}" var="foul" border="1">
+                <f:facet name="header">
+                    <h:outputText value="Fouls"/>
+                </f:facet>
+                
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="ID"/>
+                    </f:facet>
+                    <h:outputText value="#{foul.id}"/>
+                </h:column>
+                
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="Quarter"/>
+                    </f:facet>
+                    <h:outputText value="#{foul.quarter}"/>
+                </h:column>
+                
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="Time"/>
+                    </f:facet>
+                    <h:outputText value="#{foul.time}">
+                        <f:converter converterId="adam.project.converter.TimeConverter"/>
+                    </h:outputText>
+                </h:column>
+                
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="Team"/>
+                    </f:facet>
+                    <h:outputText value="#{foul.homeOrAway}"/>
+                </h:column>
+                
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="Foul"/>
+                    </f:facet>
+                    <h:outputText value="#{foul.foulName}"/>
+                </h:column>
+                
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="Player"/>
+                    </f:facet>
+                    <h:outputText value="#{foul.player}"/>
+                </h:column>
+                
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="Position"/>
+                    </f:facet>
+                    <h:outputText value="#{foul.position}"/>
+                </h:column>
+                
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="Officials"/>
+                    </f:facet>
+                    <h:outputText value="#{foul.officials}"/>
+                </h:column>
+                
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="Decision"/>
+                    </f:facet>
+                    <h:outputText value="#{foul.decision}"/>
+                </h:column>
+                
+                <f:facet name="footer">
+                    <h:outputLabel value="Fouls: "/>
+                    <h:outputText value="#{start.count}"/>
+                    <h:outputLabel value=" Major Fouls: "/>
+                    <h:outputText value="#{start.majorFoulCount}"/>
+                    <h:outputText value=" | Which foul would you like to edit/remove: "/>
+                    <h:inputText value="#{start.record}"/>
+                    <h:commandButton value="Delete" action="#{start.delete}"/>
+                    <h:commandButton value="Edit" action="#{start.edit}"/>
+                </f:facet>
+                
+            </h:dataTable>
+        </h:form>
+    </h:body>
+</html>
+
