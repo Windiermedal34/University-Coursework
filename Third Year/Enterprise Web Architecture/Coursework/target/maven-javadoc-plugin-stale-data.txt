@@ -1,0 +1,52 @@
+@options
+@packages
+-classpath
+'C:/Users/adamt/.m2/repository/javax/javaee-api/8.0/javaee-api-8.0.jar;C:/Users/adamt/.m2/repository/com/sun/mail/javax.mail/1.6.0/javax.mail-1.6.0.jar;C:/Users/adamt/.m2/repository/javax/activation/activation/1.1/activation-1.1.jar'
+-encoding
+'UTF-8'
+-protected
+-source
+'1.8'
+-sourcepath
+'C:/Users/adamt/OneDrive/Documents/NetBeansProjects/ENTWA-coursework/src/main/java'
+-author
+-bottom
+'Copyright &#169; 2023. All rights reserved.'
+-charset
+'UTF-8'
+-d
+'C:/Users/adamt/OneDrive/Documents/NetBeansProjects/ENTWA-coursework/target/site/apidocs'
+-docencoding
+'UTF-8'
+-doctitle
+'ENTWA-coursework 1.0 API'
+-linkoffline
+'https://docs.oracle.com/javase/8/docs/api' 'C:/Users/adamt/OneDrive/Documents/NetBeansProjects/ENTWA-coursework/target/javadoc-bundle-options'
+-use
+-version
+-windowtitle
+'ENTWA-coursework 1.0 API'
+adam.coursework.bus
+adam.coursework.ctrl
+adam.coursework.ents
+adam.coursework
+adam.coursework.pers
+adam.coursework.resources
+C:\Users\adamt\.m2\repository\javax\javaee-api\8.0\javaee-api-8.0.jar = 1666796672162
+C:\Users\adamt\.m2\repository\com\sun\mail\javax.mail\1.6.0\javax.mail-1.6.0.jar = 1666796671861
+C:\Users\adamt\.m2\repository\javax\activation\activation\1.1\activation-1.1.jar = 1666796671311
+C:\Users\adamt\OneDrive\Documents\NetBeansProjects\ENTWA-coursework\src\main\java = 1683571079122
+C:\Users\adamt\OneDrive\Documents\NetBeansProjects\ENTWA-coursework\target\site\apidocs\allclasses-frame.html = 1683576464856
+C:\Users\adamt\OneDrive\Documents\NetBeansProjects\ENTWA-coursework\target\site\apidocs\allclasses-noframe.html = 1683576464857
+C:\Users\adamt\OneDrive\Documents\NetBeansProjects\ENTWA-coursework\target\site\apidocs\constant-values.html = 1683576464711
+C:\Users\adamt\OneDrive\Documents\NetBeansProjects\ENTWA-coursework\target\site\apidocs\deprecated-list.html = 1683576464855
+C:\Users\adamt\OneDrive\Documents\NetBeansProjects\ENTWA-coursework\target\site\apidocs\help-doc.html = 1683576464862
+C:\Users\adamt\OneDrive\Documents\NetBeansProjects\ENTWA-coursework\target\site\apidocs\index-all.html = 1683576464852
+C:\Users\adamt\OneDrive\Documents\NetBeansProjects\ENTWA-coursework\target\site\apidocs\index.html = 1683576464859
+C:\Users\adamt\OneDrive\Documents\NetBeansProjects\ENTWA-coursework\target\site\apidocs\overview-frame.html = 1683576464659
+C:\Users\adamt\OneDrive\Documents\NetBeansProjects\ENTWA-coursework\target\site\apidocs\overview-summary.html = 1683576464861
+C:\Users\adamt\OneDrive\Documents\NetBeansProjects\ENTWA-coursework\target\site\apidocs\overview-tree.html = 1683576464835
+C:\Users\adamt\OneDrive\Documents\NetBeansProjects\ENTWA-coursework\target\site\apidocs\package-list = 1683576464656
+C:\Users\adamt\OneDrive\Documents\NetBeansProjects\ENTWA-coursework\target\site\apidocs\script.js = 1683576464864
+C:\Users\adamt\OneDrive\Documents\NetBeansProjects\ENTWA-coursework\target\site\apidocs\serialized-form.html = 1683576464758
+C:\Users\adamt\OneDrive\Documents\NetBeansProjects\ENTWA-coursework\target\site\apidocs\stylesheet.css = 1683574582698
