@@ -1,0 +1,59 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+        <h:form>
+            <h1>Stumps</h1>
+            <h2>Shopping Basket</h2>
+            <h:outputText value="Welcome #{start.accountName}"/><br/>
+            <h:dataTable value="#{start.order}" var="order">
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="Title"/>
+                    </f:facet>
+                    <h:outputText value="#{order.title}"/>
+                </h:column>
+                
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="Author"/>
+                    </f:facet>
+                    <h:outputText value="#{order.author}"/>
+                </h:column>
+                
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="Edition"/>
+                    </f:facet>
+                    <h:outputText value="#{order.edition}"/>
+                </h:column>
+                
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="Price"/>
+                    </f:facet>
+                    <h:outputText value="#{order.price}"/>
+                </h:column>
+                
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="Copies"/>
+                    </f:facet>
+                    <h:outputText value="#{order.copies}"/>
+                </h:column>
+                
+                <f:facet name="footer">
+                    <h:commandButton value="Return to Home screen" action="customer"/>
+                    <h:commandButton value="Proceed to Checkout" action="checkout"/>
+                    <h:commandButton value="Return to Browse Page" action="browse"/>
+                </f:facet>
+            </h:dataTable>
+        </h:form>
+    </h:body>
+</html>
+

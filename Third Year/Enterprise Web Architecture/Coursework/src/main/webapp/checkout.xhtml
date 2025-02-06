@@ -1,0 +1,149 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+        <h:form>
+            <h1>Stumps</h1>
+            <h2>Checkout</h2>
+            <h:outputText value="Welcome #{start.accountName}"/><br/>
+            <h:dataTable value="#{start.paymentMethods}" var="pay" border="1">
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="ID"/>
+                    </f:facet>
+                    <h:outputText value="#{pay.id}"/>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="Holder"/>
+                    </f:facet>
+                    <h:outputText value="#{pay.cardHolder}"/>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="Number"/>
+                    </f:facet>
+                    <h:outputText value="#{pay.cardNumber}"/>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="Expiry Date"/>
+                    </f:facet>
+                    <h:outputText value="#{pay.expiryDate}"/>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="Security Code"/>
+                    </f:facet>
+                    <h:outputText value="#{pay.securityCode}"/>
+                </h:column>
+                <f:facet name="footer">
+                    <h:outputLabel value="Select payment method"/>
+                    <h:inputText value="#{start.o.paymentID}"/>
+                </f:facet>
+            </h:dataTable>
+            <h:dataTable value="#{start.deliveryAddresses}" var="add" border="1">
+                <f:facet name="header">
+                    <h:outputText value="Delivery Addresses"/>
+                </f:facet>
+                
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="ID"/>
+                    </f:facet>
+                    <h:outputText value="#{add.id}"/>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="Card User"/>
+                    </f:facet>
+                    <h:outputText value="#{add.customer}"/>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="Line 1"/>
+                    </f:facet>
+                    <h:outputText value="#{add.line1}"/>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="Line 2"/>
+                    </f:facet>
+                    <h:outputText value="#{add.line2}"/>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="Line 3"/>
+                    </f:facet>
+                    <h:outputText value="#{add.line3}"/>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="Line 4"/>
+                    </f:facet>
+                    <h:outputText value="#{add.line4}"/>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="Line 5"/>
+                    </f:facet>
+                    <h:outputText value="#{add.line5}"/>
+                </h:column>
+                <f:facet name="footer">
+                    <h:outputLabel value="Select delivery address"/>
+                    <h:inputText value="#{start.o.deliveryID}"/>
+                </f:facet>
+            </h:dataTable>
+            <h:dataTable value="#{start.order}" var="order">
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="Title"/>
+                    </f:facet>
+                    <h:outputText value="#{order.title}"/>
+                </h:column>
+
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="Author"/>
+                    </f:facet>
+                    <h:outputText value="#{order.author}"/>
+                </h:column>
+
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="Edition"/>
+                    </f:facet>
+                    <h:outputText value="#{order.edition}"/>
+                </h:column>
+
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="Price"/>
+                    </f:facet>
+                    <h:outputText value="#{order.price}"/>
+                </h:column>
+
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="Copies"/>
+                    </f:facet>
+                    <h:outputText value="#{order.copies}"/>
+                </h:column>
+
+                <f:facet name="footer">
+                    <h:commandButton value="Return to Home screen" action="customer"/>
+                    <h:commandButton value="Return to Basket" action="basket"/>
+                    <h:commandButton value="Add Payment method/delivery address" action="details"/>
+                    <h:commandButton value="Place Order" action="#{start.placeOrder}"/>
+                </f:facet>
+            </h:dataTable>
+            
+        </h:form>
+    </h:body>
+</html>
+

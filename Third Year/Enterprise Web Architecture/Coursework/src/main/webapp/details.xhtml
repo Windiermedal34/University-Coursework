@@ -1,0 +1,51 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+        <h:form>
+            <h1>Stumps</h1>
+            <h2>Add Payment Method</h2>
+            <h:panelGrid columns="2">
+                <h:outputLabel value="Enter card holder's name: "/>
+                <h:inputText value="#{start.pay.cardHolder}"/>
+                <h:outputLabel value="Enter card number: "/>
+                <h:inputText value="#{start.pay.cardNumber}"/>
+                <h:outputLabel value="Enter card expiry date: "/>
+                <h:inputText value="#{start.pay.expiryDate}"/>
+                <h:outputLabel value="Enter card security code: "/>
+                <h:inputText value="#{start.pay.securityCode}"/>
+                
+                <f:facet name="footer">
+                    <h:commandButton value="Add Payment Method" action="#{start.addPaymentMethod}"/>
+                </f:facet>
+            </h:panelGrid>
+            
+            <h2>Add Delivery Address</h2>
+            <h:panelGrid columns="2">
+                <h:outputLabel value="Address Line 1"/>
+                <h:inputText value="#{start.a.line1}"/>
+                <h:outputLabel value="Address Line 2"/>
+                <h:inputText value="#{start.a.line2}"/>
+                <h:outputLabel value="Address Line 3"/>
+                <h:inputText value="#{start.a.line3}"/>
+                <h:outputLabel value="Address Line 4"/>
+                <h:inputText value="#{start.a.line4}"/>
+                <h:outputLabel value="Address Line 5"/>
+                <h:inputText value="#{start.a.line5}"/>
+                
+                <f:facet name="footer">
+                    <h:commandButton value="Add Delivery Address" action="#{start.addDeliveryAddress}"/>
+                </f:facet>
+            </h:panelGrid>
+            
+            <h:commandButton value="Home" action="customer"/>
+            <h:commandButton value="Checkout" action="checkout"/>
+        </h:form>
+    </h:body>
+</html>
+

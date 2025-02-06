@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+        <h:form>
+            <h1>Stumps</h1>
+            <h2>Login to system</h2>
+            <h:panelGrid columns="2" id="login">
+                <f:facet name="header">
+                    <h:outputText value="Login"/>
+                </f:facet>
+                
+                <h:outputLabel value="Email Address: "/>
+                <h:inputText value="#{start.loginEmail}"/>
+                <h:outputLabel value="Password: "/>
+                <h:inputSecret value="#{start.loginPassword}"/>
+                <h:outputLabel value="Credentials Valid" rendered="#{start.render}"/>
+                
+                <f:facet name="footer">
+                    <h:commandButton value="Return" action="home"/>
+                    <h:commandButton value="Check Credentials" action="#{start.checkCredentials}"/>
+                    <h:commandButton value="Log in as customer" action="customer"  rendered="#{start.render}"/>
+                    <h:commandButton value="Log in as admin" action="admin" rendered="#{start.adminRender}"/>
+                    <h:commandButton value="Can't remember login details" action="forgotLogginDetails"/>
+                </f:facet>
+            </h:panelGrid>
+        </h:form>
+    </h:body>
+</html>
+

@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+        <h:form>
+            <h1>Stumps</h1>
+            <h2>Logged in as customer</h2>
+            <h:outputText value="Welcome #{start.accountName}"/><br/>
+            <p>Welcome to the Stumps online bookshop.</p>
+            <p>Thank you for logging in as a registered customer.</p>
+            <p>From here you can either browse for books,</p>
+            <p>view your shopping basket, or view all your previous orders.</p>
+            <h:commandButton value="Previous Orders" action="previousOrders"/>
+            <h:commandButton value="Browse" action="browse"/>
+            <h:commandButton value="Shopping Basket" action="basket"/><br/><br/>
+            <h:commandButton value="Add Delivery Address and Payment Method" action="details"/>
+            <h:commandButton value="Logout" action="home"/>
+        </h:form>
+    </h:body>
+</html>
+
