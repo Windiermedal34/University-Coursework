@@ -1,0 +1,98 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+        <h:form>
+            <h1>Stumps</h1>
+            <h2>Browse For Books</h2>
+            <h:panelGrid columns="2">
+                <f:facet name="header">
+                    <h:outputText value="Search Parameters"/>
+                </f:facet>
+                
+                <h:outputLabel value="Title"/>
+                <h:inputText value="#{start.title}"/>
+                <h:outputLabel value="Author(s)"/>
+                <h:inputText value="#{start.author}"/>
+            </h:panelGrid>
+            
+            <h:panelGrid columns="2">
+                <f:facet name="header">
+                    <h:outputText value="Filters"/>
+                </f:facet>
+                
+                <h:outputLabel value="Year of publication"/>
+                <h:inputText value="#{start.yearOfPublication}"/>
+                <h:outputLabel value="Price range"/>
+                <h:inputText value="#{start.priceRange}"/>
+                
+                <f:facet name="footer">
+                    <h:commandButton value="Browse" action="#{start.showBookBrowser}"/>
+                    <h:commandButton value="Return to Home Page" action="home"/>
+                </f:facet>
+            </h:panelGrid>
+            
+            <h:dataTable value="#{start.listOfBooks}" var="book" border="1">
+                <f:facet name="header">
+                    <h:outputText value="Search Results"/>
+                </f:facet>
+                
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="Title"/>
+                    </f:facet>
+                    <h:outputText value="#{book.title}"/>
+                </h:column>
+                
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="Author"/>
+                    </f:facet>
+                    <h:outputText value="#{book.author}"/>
+                </h:column>
+                
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="Publisher"/>
+                    </f:facet>
+                    <h:outputText value="#{book.publisher}"/>
+                </h:column>
+                
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="Edition"/>
+                    </f:facet>
+                    <h:outputText value="#{book.edition}"/>
+                </h:column>
+                
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="Year of publication"/>
+                    </f:facet>
+                    <h:outputText value="#{book.yearOfPublication}"/>
+                </h:column>
+                
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="Price"/>
+                    </f:facet>
+                    <h:outputText value="#{book.price}"/>
+                </h:column>
+                
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="Copies"/>
+                    </f:facet>
+                    <h:outputText value="#{book.copies}"/>
+                </h:column>
+            </h:dataTable>
+            
+        </h:form>
+    </h:body>
+</html>
+

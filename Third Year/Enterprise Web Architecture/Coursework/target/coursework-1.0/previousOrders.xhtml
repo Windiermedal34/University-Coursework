@@ -1,0 +1,216 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+        <h:form>
+            <h1>Stumps</h1>
+            <h2>Previous Orders</h2>
+            <h:outputText value="Welcome #{start.accountName}"/><br/>
+            <h:dataTable value="#{start.orderList}" var="order" rendered="#{start.standardOrder}" border="1">
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="ID"/>
+                    </f:facet>
+                    <h:outputText value="#{order.id}"/>
+                </h:column>
+                
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="Account Name"/>
+                    </f:facet>
+                    <h:outputText value="#{order.accountName}"/>
+                </h:column>
+                
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="Title"/>
+                    </f:facet>
+                    <h:outputText value="#{order.title}"/>
+                </h:column>
+                
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="Price"/>
+                    </f:facet>
+                    <h:outputText value="#{order.totalPrice}"/>
+                </h:column>
+                
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="Copies"/>
+                    </f:facet>
+                    <h:outputText value="#{order.allCopies}"/>
+                </h:column>
+                
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="Status"/>
+                    </f:facet>
+                    <h:outputText value="#{order.status}"/>
+                </h:column>
+            </h:dataTable>
+            
+            <h:dataTable value="#{start.filteredOrder}" var="filt" rendered="#{start.filterFlag}" border="1">
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="ID"/>
+                    </f:facet>
+                    <h:outputText value="#{filt.id}"/>
+                </h:column>
+                
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="Account Name"/>
+                    </f:facet>
+                    <h:outputText value="#{filt.accountName}"/>
+                </h:column>
+                
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="Title"/>
+                    </f:facet>
+                    <h:outputText value="#{filt.title}"/>
+                </h:column>
+                
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="Price"/>
+                    </f:facet>
+                    <h:outputText value="#{filt.totalPrice}"/>
+                </h:column>
+                
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="Copies"/>
+                    </f:facet>
+                    <h:outputText value="#{filt.allCopies}"/>
+                </h:column>
+                
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="Status"/>
+                    </f:facet>
+                    <h:outputText value="#{filt.status}"/>
+                </h:column>
+                
+            </h:dataTable>
+            
+            <h:commandButton value="Refresh" action="#{start.accountOrders}"/><br/>
+            
+            <h:outputLabel value="Enter Title"/>
+            <h:inputText value="#{start.orderFilter}"/>
+            <h:commandButton value="Search" action="#{start.filterOrders}"/>
+            <h:commandButton value="Reset" action="#{start.reset}" /><br/>
+            
+            <h:outputLabel value="Enter Order ID"/>
+            <h:inputText value="#{start.deleteID}"/>
+            <h:commandButton value="Cancel Order" action="#{start.cancelOrder}"/><br/>
+            
+            <h:outputLabel value="Select Order to View in detail"/>
+            <h:inputText value="#{start.searchID}"/>
+            <h:commandButton value="Search" action="#{start.showOrder}"/>
+            <h:commandButton value="Hide" action="#{start.hide}"/>
+            
+            <h:dataTable value="#{start.selectedOrder}" var="select" border="1" rendered="#{start.selectFlag}">
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="ID"/>
+                    </f:facet>
+                    <h:outputText value="#{select.id}"/>
+                </h:column>
+                
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="Account Name"/>
+                    </f:facet>
+                    <h:outputText value="#{select.accountName}"/>
+                </h:column>
+                
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="Title"/>
+                    </f:facet>
+                    <h:outputText value="#{select.title}"/>
+                </h:column>
+                
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="Author"/>
+                    </f:facet>
+                    <h:outputText value="#{select.author}"/>
+                </h:column>
+                
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="Editions"/>
+                    </f:facet>
+                    <h:outputText value="#{select.edition}"/>
+                </h:column>
+                
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="Total Price"/>
+                    </f:facet>
+                    <h:outputText value="#{select.totalPrice}"/>
+                </h:column>
+                
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="Price"/>
+                    </f:facet>
+                    <h:outputText value="#{select.price}"/>
+                </h:column>
+                
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="All Copies"/>
+                    </f:facet>
+                    <h:outputText value="#{select.allCopies}"/>
+                </h:column>
+                
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="Copies"/>
+                    </f:facet>
+                    <h:outputText value="#{select.copies}"/>
+                </h:column>
+                
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="Status"/>
+                    </f:facet>
+                    <h:outputText value="#{select.status}"/>
+                </h:column>
+                
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="Delivery Address ID"/>
+                    </f:facet>
+                    <h:outputText value="#{select.deliveryID}"/>
+                </h:column>
+                
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="Payment Method ID"/>
+                    </f:facet>
+                    <h:outputText value="#{select.paymentID}"/>
+                </h:column>
+                
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="Order Time"/>
+                    </f:facet>
+                    <h:outputText value="#{select.orderTime}"/>
+                </h:column>
+            </h:dataTable>
+            
+            <h:commandButton value="Return" action="customer"/>
+        </h:form>
+    </h:body>
+</html>
+

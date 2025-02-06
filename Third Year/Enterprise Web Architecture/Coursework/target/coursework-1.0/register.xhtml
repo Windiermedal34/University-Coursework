@@ -1,0 +1,40 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+        <h:form>
+            <h:panelGrid columns="2" border="1">
+                <f:facet name="header">
+                    <h:outputText value="Register as a customer"/>
+                </f:facet>
+                <h:outputLabel value="Given Name: "/>
+                <h:inputText value="#{start.name}"/>
+                <h:outputLabel value="Family Name: "/>
+                <h:inputText value="#{start.surname}"/>
+                <h:outputLabel value="Email Address: "/>
+                <h:inputText value="#{start.emailAddress}"/>
+                <h:outputLabel value="Password: "/>
+                <h:inputSecret value="#{start.password}"/>
+                <h:outputLabel value="Role: "/>
+                <h:selectOneMenu value="#{start.role}">
+                    <f:selectItem itemLabel="Customer" itemValue="Customer"/>
+                    <f:selectItem itemLabel="Administrator" itemValue="Administrator"/>
+                </h:selectOneMenu>
+                <f:facet name="footer">
+                    <h:commandButton value="Check Role" action="#{start.checkRole}"/>
+                    <h:outputText value="Enter all fields" rendered="#{start.registerError}"/>
+                    <h:commandButton value="Register Customer" action="#{start.registerCustomer}" rendered="#{start.customerFlag}"/>
+                    <h:commandButton value="Register Administrator" action="#{start.registerAdmin}" rendered="#{start.administratorFlag}"/>
+                    <h:commandButton value="Return to Home Page" action="home"/>
+                    <h:commandButton value="Log in to account" action="login"/>
+                </f:facet>
+            </h:panelGrid>
+        </h:form>
+    </h:body>
+</html>
+

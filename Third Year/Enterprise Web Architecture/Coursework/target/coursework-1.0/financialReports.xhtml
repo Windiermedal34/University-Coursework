@@ -1,0 +1,109 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+        <h:form>
+            <h1>Stumps</h1>
+            <h2>All Financial Reports</h2>
+            <h:outputText value="Welcome administrator"/><br/>
+            <h:dataTable value="#{start.transactions}" var="finance" border="1">
+                <f:facet name="header">
+                    <h:outputText value="All Transactions"/>
+                </f:facet>
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="Transaction ID"/>
+                    </f:facet>
+                    <h:outputText value="#{finance.id}"/>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="Card ID"/>
+                    </f:facet>
+                    <h:outputText value="#{finance.paymentID}"/>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="Cost"/>
+                    </f:facet>
+                    <h:outputText value="#{finance.totalPrice}"/>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="Copies"/>
+                    </f:facet>
+                    <h:outputText value="#{finance.allCopies}"/>
+                </h:column>
+            </h:dataTable>
+            <h:outputLabel value="Enter Transaction ID"/>
+            <h:inputText value="#{start.transactionID}"/>
+            <h:commandButton value="View Transaction Report" action="#{start.showTransaction}"/><br/>
+            <h:dataTable value="#{start.detailedTransaction}" var="fr" border="1" rendered="#{start.transactionFlag}">
+                <f:facet name="header">
+                    <h:outputText value="Transaction Report"/>
+                </f:facet>
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="Transaction ID"/>
+                    </f:facet>
+                    <h:outputText value="#{fr.id}"/>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="Card ID"/>
+                    </f:facet>
+                    <h:outputText value="#{fr.paymentID}"/>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="Titles"/>
+                    </f:facet>
+                    <h:outputText value="#{fr.title}"/>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="Authors"/>
+                    </f:facet>
+                    <h:outputText value="#{fr.author}"/>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="Cost"/>
+                    </f:facet>
+                    <h:outputText value="#{fr.totalPrice}"/>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="Copies"/>
+                    </f:facet>
+                    <h:outputText value="#{fr.allCopies}"/>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="Payment Method"/>
+                    </f:facet>
+                    <h:outputText value="#{fr.paymentID}"/>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="Delivery Location"/>
+                    </f:facet>
+                    <h:outputText value="#{fr.deliveryID}"/>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="Status"/>
+                    </f:facet>
+                    <h:outputText value="#{fr.status}"/>
+                </h:column>
+            </h:dataTable>
+            <h:commandButton value="Return" action="admin"/>
+        </h:form>
+    </h:body>
+</html>
+

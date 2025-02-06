@@ -1,0 +1,154 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+        <h:form>
+            <h1>Stumps</h1>
+            <h2>All System Orders</h2>
+            <h:outputText value="Welcome administrator"/><br/>
+            
+            <h:dataTable value="#{start.adminOrders}" var="admin" border="1">
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="ID"/>
+                    </f:facet>
+                    <h:outputText value="#{admin.id}"/>
+                </h:column>
+                
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="Account Name"/>
+                    </f:facet>
+                    <h:outputText value="#{admin.accountName}"/>
+                </h:column>
+                
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="Title"/>
+                    </f:facet>
+                    <h:outputText value="#{admin.title}"/>
+                </h:column>
+                
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="Price"/>
+                    </f:facet>
+                    <h:outputText value="#{admin.price}"/>
+                </h:column>
+                
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="Copies"/>
+                    </f:facet>
+                    <h:outputText value="#{admin.allCopies}"/>
+                </h:column>
+                
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="Status"/>
+                    </f:facet>
+                    <h:outputText value="#{admin.status}"/>
+                </h:column>
+            </h:dataTable>
+            
+            <h:outputLabel value="Select Order to View in detail"/>
+            <h:inputText value="#{start.searchID}"/>
+            <h:commandButton value="Search" action="#{start.showOrder}"/>
+            <h:commandButton value="Hide" action="#{start.hide}"/><br/>
+            
+            <h:outputLabel value="Enter Order ID"/>
+            <h:inputText value="#{start.o.id}"/>
+            <h:outputLabel value="Enter Order's new status"/>
+            <h:inputText value="#{start.newStatus}"/>
+            <h:commandButton value="Change status" action="#{start.updatedOrderStatus}"/><br/>
+            
+            <h:commandButton value="return" action="admin"/><br/>
+            
+            <h:dataTable value="#{start.selectedOrder}" var="select" border="1" rendered="#{start.selectFlag}">
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="ID"/>
+                    </f:facet>
+                    <h:outputText value="#{select.id}"/>
+                </h:column>
+                
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="Account Name"/>
+                    </f:facet>
+                    <h:outputText value="#{select.accountName}"/>
+                </h:column>
+                
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="Title"/>
+                    </f:facet>
+                    <h:outputText value="#{select.title}"/>
+                </h:column>
+                
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="Author"/>
+                    </f:facet>
+                    <h:outputText value="#{select.author}"/>
+                </h:column>
+                
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="Editions"/>
+                    </f:facet>
+                    <h:outputText value="#{select.edition}"/>
+                </h:column>
+                
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="Price"/>
+                    </f:facet>
+                    <h:outputText value="#{select.price}"/>
+                </h:column>
+                
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="Copies"/>
+                    </f:facet>
+                    <h:outputText value="#{select.copies}"/>
+                </h:column>
+                
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="Total Copies"/>
+                    </f:facet>
+                    <h:outputText value="#{select.allCopies}"/>
+                </h:column>
+                
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="Status"/>
+                    </f:facet>
+                    <h:outputText value="#{select.status}"/>
+                </h:column>
+                
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="Delivery Address ID"/>
+                    </f:facet>
+                    <h:outputText value="#{select.deliveryID}"/>
+                </h:column>
+                
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="Payment Method ID"/>
+                    </f:facet>
+                    <h:outputText value="#{select.paymentID}"/>
+                </h:column>
+            </h:dataTable>
+            
+        </h:form>
+    </h:body>
+</html>
+
